@@ -26,6 +26,6 @@ always @(posedge CLOCK_50)
 begin
 	CLK25 <= !CLK25;	
 end
-vgaController tet(VGA_HS,VGA_VS,CLK25,on,xposition,yposition);
+vgaController vgadisplay(.Hsync(VGA_HS),.Vsync(VGA_VS),.PixelClock(CLK25),.displayON(on),.Xpixel(xposition),.Ypixel(yposition));
 pong ponger(VGA_R,VGA_G,VGA_B,xposition,yposition,CLK25,on,{SW[0], ~SW[0],SW[1], ~SW[1]},LEDR,LEDG,SW[2]);
 endmodule
