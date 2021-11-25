@@ -27,5 +27,5 @@ begin
 	CLK25 <= !CLK25;	
 end
 vgaController vgadisplay(.Hsync(VGA_HS),.Vsync(VGA_VS),.PixelClock(CLK25),.displayON(on),.Xpixel(xposition),.Ypixel(yposition));
-pong ponger(VGA_R,VGA_G,VGA_B,xposition,yposition,CLK25,on,{SW[0], ~SW[0],SW[1], ~SW[1]},LEDR,LEDG,SW[2]);
+pong ponger(.Red(VGA_R),.Green(VGA_G),.Blue(VGA_B),.Xpixel(xposition),.Ypixel(yposition),.CLK(CLK25),.displayON(on),.buttons({SW[0], ~SW[0],SW[1], ~SW[1]}),.score1(LEDR),.score2(LEDG),.reset(SW[2]));
 endmodule
