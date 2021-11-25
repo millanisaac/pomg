@@ -15,13 +15,8 @@ output [3:0] VGA_R, VGA_G,VGA_B;
 output VGA_HS,VGA_VS;
 input CLOCK_50;
 wire [9:0] xposition, yposition;
-
 wire on;
 reg CLK25;
-reg [30:0]counter;
-
-
-
 always @(posedge CLOCK_50)
 begin
 	CLK25 <= !CLK25;	
