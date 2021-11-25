@@ -1,4 +1,10 @@
-module vgaController(Hsync,Vsync,PixelClock,displayON,Xpixel,Ypixel);
+module vgaController(Hsync,
+		     Vsync,
+		     PixelClock,
+		     displayON,
+		     Xpixel,
+		     Ypixel
+		    );
 output reg Hsync,Vsync;
 input PixelClock;
 output reg[9:0] Xpixel,Ypixel;
